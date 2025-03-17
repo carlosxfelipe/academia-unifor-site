@@ -13,7 +13,7 @@ import "./styles.css";
 import reportWebVitals from "./reportWebVitals";
 
 import App from "./App"; // Página inicial
-import Login from "./Login"; // Página de login
+import Login from "@/pages/Login"; // Página de login
 
 // Rota raiz
 const rootRoute = createRootRoute({

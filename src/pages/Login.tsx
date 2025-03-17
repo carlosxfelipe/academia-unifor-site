@@ -1,3 +1,5 @@
+import Button from "@/components/Button";
+
 export default function Login() {
   return (
     <div
@@ -55,12 +57,7 @@ export default function Login() {
             </div>
           </div>
           <div>
-            <button
-              type="submit"
-              className="w-full flex justify-center bg-blue-400 hover:bg-blue-500 text-gray-100 p-3 rounded-full tracking-wide font-semibold shadow-lg cursor-pointer transition ease-in duration-500"
-            >
-              Entrar
-            </button>
+            <Button type="submit">Entrar</Button>
           </div>
         </div>
         <div className="pt-5 text-center text-gray-400 text-xs">
