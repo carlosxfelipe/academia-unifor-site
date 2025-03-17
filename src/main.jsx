@@ -12,8 +12,10 @@ import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import "./styles.css";
 import reportWebVitals from "./reportWebVitals.js";
 
-import App from "./App.jsx";
+import App from "./App.jsx"; // Página inicial
+import Login from "./Login.jsx"; // Página de login
 
+// Rota raiz
 const rootRoute = createRootRoute({
   component: () => (
     <>
@@ -23,14 +25,24 @@ const rootRoute = createRootRoute({
   ),
 });
 
-const indexRoute = createRoute({
+// Rota da Homepage (/)
+const homeRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/",
   component: App,
 });
 
-const routeTree = rootRoute.addChildren([indexRoute]);
+// Rota de Login (/login)
+const loginRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/login",
+  component: Login,
+});
 
+// Criando árvore de rotas
+const routeTree = rootRoute.addChildren([homeRoute, loginRoute]);
+
+// Criando o roteador
 const router = createRouter({
   routeTree,
   context: {},
@@ -50,7 +62,5 @@ if (rootElement && !rootElement.innerHTML) {
   );
 }
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Medição de performance (opcional)
 reportWebVitals();
