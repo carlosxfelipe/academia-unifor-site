@@ -1,5 +1,5 @@
 import { StrictMode } from "react";
-import ReactDOM from "react-dom/client";
+import * as ReactDOM from "react-dom/client";
 import {
   Outlet,
   RouterProvider,
@@ -10,10 +10,10 @@ import {
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
 import "./styles.css";
-import reportWebVitals from "./reportWebVitals.js";
+import reportWebVitals from "./reportWebVitals";
 
-import App from "./App.jsx"; // Página inicial
-import Login from "./Login.jsx"; // Página de login
+import App from "./App"; // Página inicial
+import Login from "./Login"; // Página de login
 
 // Rota raiz
 const rootRoute = createRootRoute({
